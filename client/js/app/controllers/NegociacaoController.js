@@ -15,20 +15,16 @@ class NegociacaoController {
         let data = new Date (...
             this._inputData.value
                 .split('-')
-                .map(function(item, indice){
-                    // if(indice == 1) {
-                    //     return item - 1;
-                    // }
-                    // return item;
-
-                    return item - indice % 2; // decrementa 1 na posicao 1 (mes)
-                })
+                .map((item, indice) => item - indice % 2) // mod 2 decrementa 1 na posicao 1 (mes)
         ); // utilizando spread operator
-    
+        
+        let negociacao = new Negociacao(
+            data,
+            this._inputQuantidade.value,
+            this._inputValor.value
+        );
 
-        // adicionar a negociacao em uma lista
-
-        console.log(data);
+        console.log(negociacao);
 
     }
 
