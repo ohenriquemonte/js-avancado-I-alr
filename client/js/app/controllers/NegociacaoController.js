@@ -9,16 +9,14 @@ class NegociacaoController {
 
     adiciona(event) {
         event.preventDefault();
-        
-        let negociacao = new Negociacao(
-            this._inputData.value,
-            this._inputQuantidade.value,
-            this._inputValor.value
-        );
+
+        // let data = new Date (this._inputData.value.split('-'));
+        let data = new Date (this._inputData.value.replace(/-/g, ','));
+    
 
         // adicionar a negociacao em uma lista
 
-        console.log(negociacao);
+        console.log(data);
 
     }
 
