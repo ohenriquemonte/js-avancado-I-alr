@@ -16,7 +16,7 @@ class NegociacaoController {
             this._inputData.value
                 .split('-')
                 .map((item, indice) => item - indice % 2) // mod 2 decrementa 1 na posicao 1 (mes)
-        ); // utilizando spread operator
+        ); // utilizando spread operator (permite passar itens de um array como parametros pro construtor)
         
         let negociacao = new Negociacao(
             data,
