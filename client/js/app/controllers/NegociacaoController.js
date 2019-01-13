@@ -18,16 +18,14 @@ class NegociacaoController {
         //         .map((item, indice) => item - indice % 2) // mod 2 decrementa 1 na posicao 1 (mes)
         // ); // utilizando spread operator (permite passar itens de um array como parametros pro construtor)
         
-        let helper = new DateHelper();
-        
         let negociacao = new Negociacao(
-            helper.textoParaData(this._inputData.value),
+            DateHelper.textoParaData(this._inputData.value),
             this._inputQuantidade.value,
             this._inputValor.value
         );
 
         console.log(negociacao);
-        console.log(helper.dataParaTexto(negociacao.data));
+        console.log(DateHelper.dataParaTexto(negociacao.data));
 
     }
 
