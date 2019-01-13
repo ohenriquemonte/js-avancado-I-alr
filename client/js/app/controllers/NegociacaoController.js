@@ -12,23 +12,22 @@ class NegociacaoController {
 
         // let data = new Date (this._inputData.value.split('-'));
         // let data = new Date (this._inputData.value.replace(/-/g, ','));
-        let data = new Date (...
-            this._inputData.value
-                .split('-')
-                .map((item, indice) => item - indice % 2) // mod 2 decrementa 1 na posicao 1 (mes)
-        ); // utilizando spread operator (permite passar itens de um array como parametros pro construtor)
+        // let data = new Date (...
+        //     this._inputData.value
+        //         .split('-')
+        //         .map((item, indice) => item - indice % 2) // mod 2 decrementa 1 na posicao 1 (mes)
+        // ); // utilizando spread operator (permite passar itens de um array como parametros pro construtor)
+        
+        let helper = new DateHelper();
         
         let negociacao = new Negociacao(
-            data,
+            helper.textoParaData(this._inputData.value),
             this._inputQuantidade.value,
             this._inputValor.value
         );
 
-        let diaMesAno = negociacao.data.getDate() 
-            +  '/' + (negociacao.data.getMonth() + 1 )
-            + '/' + negociacao.data.getFullYear();
-
-        console.log(diaMesAno);
+        console.log(negociacao);
+        console.log(helper.dataParaTexto(negociacao.data));
 
     }
 
